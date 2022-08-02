@@ -1,0 +1,75 @@
+.buttonNumber {
+    width: 60px;
+    height: 20px;
+    font-size: 13px;
+    border-radius: 5px;
+    border: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+/* body{
+    background-image: url(src/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+} */
+div{
+    display: block;
+}
+.taskRect {
+
+    /* mix-blend-mode: soft-light; */
+    background-color: rgba(225, 225, 225, 0.709);
+    border-radius: 15px;
+    margin:10px 60px 20px;
+    height: 70%;
+}
+.taskText{
+    font-family: Roboto sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.75);
+    text-align:center;
+
+}
+.X-buttons{
+    margin:0 auto 5%;
+}
+/* .head{
+    background-color: aquamarine;
+} */
+.main-panel-table{
+    height:100vh;
+}
+.forms{
+    background-color: rgba(158, 221, 255, 0.687);
+    border-radius: 30px;
+    width:100%;
+}
+.outsideText{
+    font-family: Roboto sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgb(63, 1, 66);
+    text-align:center;
+}
+.imgPanel{
+    text-align: center;
+}
+.Y-letter{
+    font-family: Roboto sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: rgba(0, 0, 0, 0.75);
+}
