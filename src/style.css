@@ -58,11 +58,14 @@ div{
     line-height: normal;
     letter-spacing: normal;
     color: rgb(63, 1, 66);
-    text-align:center;
+    text-align:right;
 }
-.imgPanel{
+/* .imgPanel{
     text-align: center;
 }
+.tyanPanel{
+    text-align: center;
+} */
 .Y-letter{
     font-family: Roboto sans-serif;
     font-size: 22px;
@@ -72,4 +75,7 @@ div{
     line-height: normal;
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.75);
+}
+body{
+    display: table;
 }
