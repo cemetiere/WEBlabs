@@ -22,116 +22,123 @@
                 <td class="sidePanel" width="20%" rowspan="2"></td>
                 <td>
                     <table class="forms" border="0">
-                        <tr>
-                            <td colspan="2">
-                                <div class="taskText">
-                                    Введите данные на проверку вхождения в область значений данного графика:
-                                </div>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <!-- X panel -->
-                            <td width="50%">
-                                <div class="taskRect">
-
-                                    <table class="X-buttons">
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="3">
-                                                    <h3 style="text-align:center; margin:auto;">X</h3>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <button class="buttonNumber" id="-3" name="x" type="button"  style="stroke-width: 2; stroke: #C8CCD4;">-3</button>
-                                                </td>
-                                                <td>
-                                                    <button class="buttonNumber" id="-2" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">-2</button>
-                                                </td>
-                                                <td>
-                                                    <button class="buttonNumber" id="-1" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">-1</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <button class="buttonNumber" id="0" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">0</button>
-                                                </td>
-                                                <td>
-                                                    <button class="buttonNumber" id="1" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">1</button>
-                                                </td>
-                                                <td>
-                                                    <button class="buttonNumber" id="2" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">2</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <button class="buttonNumber" id="3" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">3</button>
-                                                </td>
-                                                <td>
-                                                    <button class="buttonNumber" id="4" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">4</button>
-                                                </td>
-                                                <td>
-                                                    <button class="buttonNumber" id="5" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">5</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </td>
-                            <!-- R panel -->
-                            <td>
-                                <div class="taskRect">
-                                    <table class="X-buttons">
-                                        <tbody>
-                                            <tr>
-                                                <td colspan="3">
-                                                    <h3 style="text-align:center; margin:auto;">R</h3>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <button class="buttonNumber" id="1r" name="r" type="button"  style="stroke-width: 2; stroke: #C8CCD4;">1</button>
-                                                </td>
-                                                <td>
-                                                </td>
-                                                <td>
-                                                    <button class="buttonNumber" id="1.5r" name="r" type="button" style="stroke-width: 2; stroke: #C8CCD4;">1.5</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                </td>
-                                                <td>
-                                                    <button class="buttonNumber" id="2r" name="r" type="button" style="stroke-width: 2; stroke: #C8CCD4;">2</button>
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <button class="buttonNumber" id="2.5r" name="r" type="button" style="stroke-width: 2; stroke: #C8CCD4;">2.5</button>
-                                                </td>
-                                                <td>
-                                                </td>
-                                                <td>
-                                                    <button class="buttonNumber" id="3r" name="r" type="button" style="stroke-width: 2; stroke: #C8CCD4;">3</button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Y panel -->
-                        <tr>
-                            <td colspan="2" style="text-align: center;">
-                                <div class="taskRect">
-                                    <span class="Y-letter">Y</span>
-                                    <input autocomplete="off" autofocus="" class="input" id="y" maxlength="8" name="y" placeholder="Введите число от -3 до 3" style="border: 2px solid #d0d1c7; text-align: center; margin:0 auto; position: relative;" title="Введите число" type="text">
-                                </div>
-                            </td>
-                        </tr>
+                        <form>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="taskText">
+                                        Введите данные на проверку вхождения в область значений данного графика:
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <!-- X panel -->
+                                <td width="50%">
+                                    <div class="taskRect">
+    
+                                        <table class="X-buttons">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <h3 style="text-align:center; margin:auto;">X</h3>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <button class="buttonNumber" id="-3" name="x" type="button"  style="stroke-width: 2; stroke: #C8CCD4;">-3</button>
+                                                    </td>
+                                                    <td>
+                                                        <button class="buttonNumber" id="-2" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">-2</button>
+                                                    </td>
+                                                    <td>
+                                                        <button class="buttonNumber" id="-1" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">-1</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <button class="buttonNumber" id="0" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">0</button>
+                                                    </td>
+                                                    <td>
+                                                        <button class="buttonNumber" id="1" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">1</button>
+                                                    </td>
+                                                    <td>
+                                                        <button class="buttonNumber" id="2" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">2</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <button class="buttonNumber" id="3" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">3</button>
+                                                    </td>
+                                                    <td>
+                                                        <button class="buttonNumber" id="4" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">4</button>
+                                                    </td>
+                                                    <td>
+                                                        <button class="buttonNumber" id="5" name="x" type="button" style="stroke-width: 2; stroke: #C8CCD4;">5</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                                <!-- R panel -->
+                                <td>
+                                    <div class="taskRect">
+                                        <table class="X-buttons">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <h3 style="text-align:center; margin:auto;">R</h3>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <button class="buttonNumber" id="1r" name="r" type="button"  style="stroke-width: 2; stroke: #C8CCD4;">1</button>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <button class="buttonNumber" id="1.5r" name="r" type="button" style="stroke-width: 2; stroke: #C8CCD4;">1.5</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <button class="buttonNumber" id="2r" name="r" type="button" style="stroke-width: 2; stroke: #C8CCD4;">2</button>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <button class="buttonNumber" id="2.5r" name="r" type="button" style="stroke-width: 2; stroke: #C8CCD4;">2.5</button>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                        <button class="buttonNumber" id="3r" name="r" type="button" style="stroke-width: 2; stroke: #C8CCD4;">3</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Y panel -->
+                            <tr>
+                                <td colspan="2" style="text-align: center;">
+                                    <div class="taskRect">
+                                        <span class="Y-letter">Y</span>
+                                        <input autocomplete="off" autofocus="" class="input" id="y" maxlength="8" name="y" placeholder="Введите число от -3 до 3" style="border: 2px solid #d0d1c7; text-align: center; margin:0 auto; position: relative;" title="Введите число" type="text">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: center;">
+                                        <input type="submit">
+                                </td>
+                            </tr>
+                        </form>
                     </table>
                 </td>
                 <td class="sidePanel" width="20%" rowspan="2"></td>
