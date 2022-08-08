@@ -1,10 +1,25 @@
-.buttonNumber {
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+.XButtons button,
+.RButtons button {
     width: 60px;
     height: 20px;
     font-size: 13px;
     border-radius: 5px;
     border: 1;
-    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgb(255, 202, 185);
+    background-color: #ffffffcc;
+    cursor:pointer;
+    stroke-width: 2; 
+    stroke: #C8CCD4;
+}
+.XButtons button:hover,
+.RButtons button:hover {
+    cursor: pointer;
+    border-color: #8338ec;
 }
 /* body{
     background-image: url(src/bg.jpg);
@@ -12,9 +27,7 @@
     background-position: top center;
     background-size: cover;
 } */
-div{
-    display: block;
-}
+
 .taskRect {
 
     /* mix-blend-mode: soft-light; */
@@ -35,7 +48,8 @@ div{
     text-align:center;
 
 }
-.X-buttons{
+.XButtons,
+.RButtons{
     margin:0 auto 5%;
 }
 /* .head{
@@ -75,4 +89,19 @@ div{
     line-height: normal;
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.75);
+    text-align:left;
+}
+.tyanImg{
+    cursor: pointer;
+}
+#graph{
+    background-color: #ffdcf8;
+    border-radius: 30px;
+}
+.inputY{
+    border-radius: 10px;
+    padding: 1%;
+}
+.selected{
+    background-color:brown;
 }
