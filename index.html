@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="css/style.css" rel="stylesheet">
+    <script defer src="js/validation.js"></script>
 </head>
 
 <body
@@ -25,8 +26,8 @@
                 <td class="sidePanel" width="20%" rowspan="2"></td>
                 <td>
                     <table class="forms" border="0">
-                        <form>
-                            <input autocomplete="off" id="xValue" name="x" type="hidden" value="0.5">
+                        <form id="form">
+                            <input autocomplete="off" id="xValue" name="x" type="hidden" value="">
                             <tr>
                                 <td colspan="2">
                                     <div class="taskText">
@@ -48,35 +49,35 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <button  id="-3" name="x" type="button">-3</button>
+                                                        <button  value="-3" name="x" type="button" >-3</button>
                                                     </td>
                                                     <td>
-                                                        <button  id="-2" name="x" type="button">-2</button>
+                                                        <button  value="-2" name="x" type="button">-2</button>
                                                     </td>
                                                     <td>
-                                                        <button  id="-1" name="x" type="button">-1</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <button  id="0" name="x" type="button">0</button>
-                                                    </td>
-                                                    <td>
-                                                        <button  id="1" name="x" type="button">1</button>
-                                                    </td>
-                                                    <td>
-                                                        <button  id="2" name="x" type="button">2</button>
+                                                        <button  value="-1" name="x" type="button">-1</button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <button  id="3" name="x" type="button">3</button>
+                                                        <button  value="0" name="x" type="button">0</button>
                                                     </td>
                                                     <td>
-                                                        <button  id="4" name="x" type="button">4</button>
+                                                        <button  value="1" name="x" type="button">1</button>
                                                     </td>
                                                     <td>
-                                                        <button  id="5" name="x" type="button">5</button>
+                                                        <button  value="2" name="x" type="button">2</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <button  value="3" name="x" type="button">3</button>
+                                                    </td>
+                                                    <td>
+                                                        <button  value="4" name="x" type="button">4</button>
+                                                    </td>
+                                                    <td>
+                                                        <button  value="5" name="x" type="button">5</button>
                                                     </td>
                                                 </tr>
                                                 <script>
@@ -88,6 +89,8 @@
                                                                 el.style.background = "#ffffffcc";
                                                             });
                                                             (this).style.background = "violet";
+                                                            document.getElementById("xValue").value = this.value;
+                                                            valid();
                                                         }
                                                     });
                                                 </script>
@@ -98,6 +101,7 @@
                                 <!-- R panel -->
                                 <td>
                                     <div class="taskRect">
+                                        <input autocomplete="off" id="rValue" name="r" type="hidden" value="">
                                         <table class="RButtons">
                                             <tbody>
                                                 <tr>
@@ -107,31 +111,31 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <button  id="1r" name="r" type="button">1</button>
+                                                        <button  value="1"  name="r" type="button">1</button>
                                                     </td>
                                                     <td>
                                                     </td>
                                                     <td>
-                                                        <button  id="1.5r" name="r" type="button">1.5</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                    </td>
-                                                    <td>
-                                                        <button  id="2r" name="r" type="button">2</button>
-                                                    </td>
-                                                    <td>
+                                                        <button  value="1.5" name="r" type="button">1.5</button>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <button  id="2.5r" name="r" type="button">2.5</button>
+                                                    </td>
+                                                    <td>
+                                                        <button  value="2" name="r" type="button">2</button>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <button  value="2.5" name="r" type="button">2.5</button>
                                                     </td>
                                                     <td>
                                                     </td>
                                                     <td>
-                                                        <button  id="3r" name="r" type="button">3</button>
+                                                        <button  value="3" name="r" type="button">3</button>
                                                     </td>
                                                 </tr>
                                                 <script>
@@ -143,6 +147,8 @@
                                                                 el.style.background = "#ffffffcc";
                                                             });
                                                             (this).style.background = "violet";
+                                                            document.getElementById("rValue").value = this.value;
+                                                            valid();
                                                         }
                                                     });
                                                 </script>
@@ -167,7 +173,7 @@
                             <!-- Submit  -->
                             <tr>
                                 <td colspan="2" style="text-align: center;">
-                                    <input type="submit">
+                                    <input id="submitButton" disabled="true" type="submit">
                                 </td>
                             </tr>
                         </form>
@@ -192,7 +198,6 @@
         </main>
 
     </table>
-    <script src="js/validation.js"></script>
 </body>
 
 </html>
