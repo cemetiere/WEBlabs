@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     }
-
 .XButtons button,
 .RButtons button {
     width: 60px;
@@ -21,20 +20,23 @@
     cursor: pointer;
     border-color: #8338ec;
 }
-/* body{
-    background-image: url(src/bg.jpg);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-} */
 
 .taskRect {
 
     /* mix-blend-mode: soft-light; */
     background-color: rgba(225, 225, 225, 0.709);
     border-radius: 15px;
-    margin:10px 60px 20px;
+    margin:50px 90px 6px;
     height: 70%;
+    
+}
+.YtaskRect {
+
+    /* mix-blend-mode: soft-light; */
+    background-color: rgba(225, 225, 225, 0.709);
+    border-radius: 15px;
+    margin:10px 200px 50px;
+    height: 80xpx;    
 }
 .taskText{
     font-family: Roboto sans-serif;
@@ -45,7 +47,7 @@
     line-height: normal;
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.75);
-    text-align:center;
+    text-align: center;
 
 }
 .XButtons,
@@ -63,9 +65,9 @@
     border-radius: 30px;
     width:100%;
 }
-.outsideText{
+.headText{
     font-family: Roboto sans-serif;
-    font-size: 17px;
+    font-size: 23px;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -80,16 +82,13 @@
 .tyanPanel{
     text-align: center;
 } */
-.Y-letter{
+.letter{
+    text-align:center;
+    margin-bottom: 10px;
     font-family: Roboto sans-serif;
     font-size: 22px;
     font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
     color: rgba(0, 0, 0, 0.75);
-    text-align:left;
 }
 .tyanImg{
     cursor: pointer;
@@ -101,7 +100,66 @@
 .inputY{
     border-radius: 10px;
     padding: 1%;
+    margin-bottom: 10px;
 }
 .selected{
     background-color:brown;
+}
+canvas{
+    cursor:crosshair; 
+}
+input[type="submit"]{
+    border-radius: 10px;
+    height: 20px;
+    width: 200px;
+    margin-bottom: 2%;
+}
+input[type="submit"]:hover{
+    background-color:#ff9dc198;
+}
+
+header{
+    height: 80px;
+
+}
+.resultTable{
+    width: 100%;
+	margin-bottom: 20px;
+	border: 5px solid #fff;
+
+	border-top: 5px solid #fff;
+	border-bottom: 3px solid #fff;
+	border-collapse: collapse; 
+
+	font-size: 15px;
+	background: #fff!important;
+
+}
+
+.theme-color{
+    color: green;
+}
+.warning{
+    color: red;
+}
+
+.resultTable th {
+	font-weight: bold;
+	padding: 7px;
+	background: #54cfff6d;
+	border: none;
+	text-align: left;
+	font-size: 15px;
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #c9e8ff;
+}
+.resultTable td {
+	padding: 7px;
+	border: none;
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+	font-size: 15px;
+}
+.resultTable tbody tr:nth-child(even){
+	background: #f8f8f8!important;
 }

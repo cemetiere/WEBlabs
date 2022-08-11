@@ -106,3 +106,26 @@ function drawGraph(){
     }
 }
 drawGraph();
+
+canvas.onclick = (e) => {
+    /** @type {HTMLFormElement} */
+    const form = document.getElementById("form");
+
+    const rField = document.getElementById("rValue");
+
+
+    if (rField.value=="") {
+        alert('Please select a value for R first');
+        return;
+    }
+
+    let r = rField.value;
+    let x = Math.round((2 * e.offsetX / canvasWidth - 1) * r * 1.5 * 100) / 100;
+    let y = Math.round((-2 * e.offsetY / canvasHeight + 1) * r * 1.5 * 100) / 100;
+    document.getElementById('xFromClick').disabled = false;
+    document.getElementById('xFromClick').value = x;
+
+    form['xValue'].value = x;
+    form['y'].value = y;
+    form.submit();
+}
