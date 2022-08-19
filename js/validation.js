@@ -2,36 +2,14 @@ const VALID_COLOR = "black";
 const INVALID_COLOR = "red";
 
 let yField = document.getElementById("y");
-let xField = document.getElementById("xValue");
-let rField = document.getElementById("rValue");
-let form = document.getElementById("form");
 let submitButton = document.getElementById("submitButton");
 
 
 function valid(){
-    if (yValidate()==true && xValidate()==true && rValidate()==true){
+    if (yValidate()==true){
         submitButton.disabled = false;
     } else {
         submitButton.disabled = true;
-    }
-}
-
-function xValidate(){
-    let inputX = parseFloat(xField.value);
-    if (Number.isNaN(inputX)){
-        return false;
-    } else {
-        return true;
-    }
-}
-
-function rValidate(){
-    let inputR = parseFloat(rField.value);
-    console.log(inputR);
-    if (Number.isNaN(inputR)){
-        return false;
-    } else {
-        return true;
     }
 }
 

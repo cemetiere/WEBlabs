@@ -8,6 +8,16 @@ const canvasHeight = canvas.clientHeight;
 const scaleX = 25;
 const scaleY = 25;
 
+const rField = document.getElementById("rValue");
+let r = rField.value;
+
+rField.addEventListener('change', redrawGraph);
+
+function redrawGraph(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    r = rField.value;
+    drawGraph();
+}
 
 function drawGraph(){
     ctx.beginPath();
@@ -103,21 +113,33 @@ function drawGraph(){
         ctx.textAlign = 'left';
         ctx.textBaseline = 'middle';
         ctx.fillText(labels[i-1], canvasWidth/2+7, canvasHeight - i*canvasHeight/6);
+        ctx.closePath();
     }
+    points.forEach((v, index) => {
+        const x = v.x / r * canvasWidth / 3 + canvasWidth / 2;
+        const y = -v.y / r * canvasHeight / 3 + canvasHeight / 2;
+
+        ctx.fillStyle = v.color;
+        ctx.beginPath();
+        ctx.arc(x, y, 5, 0, Math.PI*2);
+        ctx.fill();
+    });
+
 }
 drawGraph();
+
+function drawCircle(x, y){
+    ctx.fillStyle = "red";
+    ctx.beginPath();
+    ctx.arc(x,y,5,0,2*Math.PI);
+    ctx.fill();
+    ctx.closePath();
+}
 
 canvas.onclick = (e) => {
     /** @type {HTMLFormElement} */
     const form = document.getElementById("form");
-
     const rField = document.getElementById("rValue");
-
-
-    if (rField.value=="") {
-        alert('Please select a value for R first');
-        return;
-    }
 
     let r = rField.value;
     let x = Math.round((2 * e.offsetX / canvasWidth - 1) * r * 1.5 * 100) / 100;
@@ -129,3 +151,4 @@ canvas.onclick = (e) => {
     form['y'].value = y;
     form.submit();
 }
+

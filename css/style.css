@@ -98,9 +98,18 @@
     border-radius: 30px;
 }
 .inputY{
-    border-radius: 10px;
+
     padding: 1%;
     margin-bottom: 10px;
+    border: 1px solid #999;
+    font-size: 15px;
+    color: #1c87c9;
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: 4px 4px #ccc;
+}
+.inputY::placeholder{
+    color: #1c87c9;
 }
 .selected{
     background-color:brown;
@@ -140,7 +149,7 @@ header{
     color: green;
 }
 .warning{
-    color: red;
+    color: rgb(245, 114, 114);
 }
 
 .resultTable th {
@@ -162,4 +171,17 @@ header{
 }
 .resultTable tbody tr:nth-child(even){
 	background: #f8f8f8!important;
+}
+.selectField{
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom: 10%;
+    width: 30%;
+    border: 1px solid #999;
+    font-size: 15px;
+    color: #1c87c9;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 4px 4px #ccc;
+    text-align: center;
 }

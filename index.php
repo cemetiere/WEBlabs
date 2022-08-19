@@ -12,6 +12,19 @@
     <title>Lab Work #1</title>
     <link href="css/style.css" rel="stylesheet">
     <script defer src="js/validation.js"></script>
+    <script>
+        const points = [
+            <?php
+                if (isset($_SESSION['attempts'])) {
+                    foreach($_SESSION['attempts'] as $index=>$attempt) {
+                        srand($index);
+                        $random_color = 'rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ')';
+                        printf('{\'x\':%s,\'y\':%s, \'color\':\'%s\'},', $attempt['x'], $attempt['y'], $random_color);
+                    }
+                }
+            ?>
+        ];
+    </script>
 
 </head>
 
@@ -35,8 +48,6 @@
                             <td>
                                 <table class="forms" border="0">
                                     <form id="form" action="send_point.php" method="POST">
-                                        <input autocomplete="off" id="xValue" name="x" type="hidden" value="">
-                                        <input autocomplete="off" id="xFromClick" name="x" type="hidden" value="">
                                         <tr>
                                             <td colspan="2">
                                                 <div class="taskText">
@@ -48,120 +59,32 @@
                                             <!-- X panel -->
                                             <td width="50%">
                                                 <div class="taskRect">
-                                                    <table class="XButtons">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td colspan="3">
-                                                                    <h3 class="letter">X</h3>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <button  value="-3" name="x" type="button" >-3</button>
-                                                                </td>
-                                                                <td>
-                                                                    <button  value="-2" name="x" type="button">-2</button>
-                                                                </td>
-                                                                <td>
-                                                                    <button  value="-1" name="x" type="button">-1</button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <button  value="0" name="x" type="button">0</button>
-                                                                </td>
-                                                                <td>
-                                                                    <button  value="1" name="x" type="button">1</button>
-                                                                </td>
-                                                                <td>
-                                                                    <button  value="2" name="x" type="button">2</button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <button  value="3" name="x" type="button">3</button>
-                                                                </td>
-                                                                <td>
-                                                                    <button  value="4" name="x" type="button">4</button>
-                                                                </td>
-                                                                <td>
-                                                                    <button  value="5" name="x" type="button">5</button>
-                                                                </td>
-                                                            </tr>
-                                                            <script>
-                                                                var a = document.querySelectorAll('.XButtons button');
-                                                                [].forEach.call(a, function (el) {
-                                                                    el.onclick = function (e) {
-                                                                        var b = document.querySelectorAll('.XButtons button');
-                                                                        [].forEach.call(b, function (el) {
-                                                                            el.style.background = "#ffffffcc";
-                                                                        });
-                                                                        (this).style.background = "violet";
-                                                                        document.getElementById("xValue").value = this.value;
-                                                                        valid();
-                                                                    }
-                                                                });
-                                                            </script>
-                                                        </tbody>
-                                                    </table>
+                                                    <h3 class="letter">X:</h3>
+                                                    <select name="x" id="xValue" class="selectField">
+                                                        <option value="-3">-3</option>
+                                                        <option value="-2">-2</option>
+                                                        <option value="-1">-1</option>
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option id="xFromClick" value="" disabled></option>
+                                                    </select>
                                                 </div>
                                             </td>
                                             <!-- R panel -->
                                             <td>
                                                 <div class="taskRect">
-                                                    <input autocomplete="off" id="rValue" name="r" type="hidden" value="">
-                                                    <table class="RButtons">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td colspan="3">
-                                                                    <h3 class="letter">R</h3>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <button  value="1"  name="r" type="button">1</button>
-                                                                </td>
-                                                                <td>
-                                                                </td>
-                                                                <td>
-                                                                    <button  value="1.5" name="r" type="button">1.5</button>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                </td>
-                                                                <td>
-                                                                    <button  value="2" name="r" type="button">2</button>
-                                                                </td>
-                                                                <td>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <button  value="2.5" name="r" type="button">2.5</button>
-                                                                </td>
-                                                                <td>
-                                                                </td>
-                                                                <td>
-                                                                    <button  value="3" name="r" type="button">3</button>
-                                                                </td>
-                                                            </tr>
-                                                            <script>
-                                                                var a = document.querySelectorAll('.RButtons button');
-                                                                [].forEach.call(a, function (el) {
-                                                                    el.onclick = function (e) {
-                                                                        var b = document.querySelectorAll('.RButtons button');
-                                                                        [].forEach.call(b, function (el) {
-                                                                            el.style.background = "#ffffffcc";
-                                                                        });
-                                                                        (this).style.background = "violet";
-                                                                        document.getElementById("rValue").value = this.value;
-                                                                        valid();
-                                                                    }
-                                                                });
-                                                            </script>
-                                                        </tbody>
-                                                    </table>
+                                                    <h3 class="letter">R:</h3>
+                                                    <select name="r" id="rValue" class="selectField">
+                                                        <option value="1">1</option>
+                                                        <option value="1.5">1.5</option>
+                                                        <option value="2">2</option>
+                                                        <option value="2.5">2.5</option>
+                                                        <option value="3">3</option>
+                                                    </select>
                                                 </div>
                                             </td>
                                         </tr>
