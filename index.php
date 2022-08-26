@@ -12,20 +12,6 @@
     <title>Lab Work #1</title>
     <link href="css/style.css" rel="stylesheet">
     <script defer src="js/validation.js"></script>
-    <script>
-        const points = [
-            <?php
-                if (isset($_SESSION['attempts'])) {
-                    foreach($_SESSION['attempts'] as $index=>$attempt) {
-                        srand($index);
-                        $random_color = 'rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ')';
-                        printf('{\'x\':%s,\'y\':%s, \'color\':\'%s\'},', $attempt['x'], $attempt['y'], $random_color);
-                    }
-                }
-            ?>
-        ];
-    </script>
-
 </head>
 
 <body>
@@ -47,7 +33,7 @@
                             <td class="sidePanel" width="20%" rowspan="2"></td>
                             <td>
                                 <table class="forms" border="0">
-                                    <form id="form" action="send_point.php" method="POST">
+                                    <form id="form"  method="POST">
                                         <tr>
                                             <td colspan="2">
                                                 <div class="taskText">
@@ -117,17 +103,14 @@
                             <td>
                                 <div class="imgTyanPanel">
                                     <canvas id="graph" width="300" height="300"></canvas>
-                                    <script src="js/graph.js"></script>
                                     <img class="tyanImg" src="img/mainGirl.webp" onmouseover="this.src = 'img/girlOnMouseMove.webp'" onmouseout="this.src = 'img/mainGirl.webp'" alt="tyan" width="300" height="300" align="right">
                                 </div>
                             </td>
-
                         </tr>
                     </main>
                 </table>
             </td>
         </tr>
-
             <tr>
                 <td colspan="3">
                     <table class='resultTable' border="1" width="100%">
@@ -140,35 +123,16 @@
                             <th>Время</th>
                             <th>Время работы</th>
                         </tr>
-                        <?php
-                            if (isset($_SESSION['attempts'])) {
-                                foreach($_SESSION['attempts'] as $index=>$attempt) {
-                                    echo('<tr>');
-                                    
-                                    printf('<td>%s</td>', $index+1);
-
-                                    printf('<td>%s</td>', $attempt['x']);
-                                    printf('<td>%s</td>', $attempt['y']);
-                                    printf('<td>%s</td>', $attempt['r']);
-
-                                    if ($attempt['hit']) {
-                                        echo('<td class="theme-color">HIT</td>');
-                                    } else {
-                                        echo('<td class="warning">MISS</td>');
-                                    }
-
-                                    printf('<td>%s</td>', date('Y-m-d H:i:s', $attempt['attempt_time']) . ' UTC');
-
-                                    printf('<td>%s ms</td>', $attempt['process_time']);
-            
-                                    echo('</tr>');
-                                }
-                            }
-                        ?>
                     </table>
                 </td>
             </tr>
     </table>
+    <div id="pop_up_panel">
+        <img id="pop_up_message" src='img/miss.png'>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="js/graph.js"></script>
 </body>
 
 </html>

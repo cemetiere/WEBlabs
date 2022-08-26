@@ -1,5 +1,6 @@
 <?php
-    $start_time = hrtime(true);
+    $start = microtime(true);
+    date_default_timezone_set('Europe/Moscow');
 
     if (!(isset($_POST['x']) && isset($_POST['y']) && isset($_POST['r']))) {
         echo 'Not enough parameters';
@@ -31,27 +32,40 @@
         session_start();
 
         if ($hit) {
-            $_SESSION['hit_message'] = 'Successful hit!';
+            $hitFact = 'true';
         } else {
-            $_SESSION['hit_message'] = 'Miss!';
+            $hitFact = 'false';
         }
 
-        $attempt = array(
-            'x'=>$x,
-            'y'=>$y,
-            'r'=>$r,
-            'hit'=>$hit,
-            'attempt_time'=>time(),
-            'process_time'=>(hrtime(true) - $start_time)/10000000
-        );
+
+        $attempt_time = date('m/d/Y h:i:s a', time());;
+        $process_time = number_format(microtime(true) - $start, 8, '.', '');
+        // $data = array(
+        //     'x'=>$x,
+        //     'y'=>$y,
+        //     'r'=>$r,
+        //     'hit'=>$hitFact,
+        //     'attempt_time'=>$attempt_time,
+        //     'process_time'=>$process_time
+        // );
+
+        $data = "{" .
+            "\"x\":\"$x\"," .
+            "\"y\":\"$y\"," .
+            "\"r\":\"$r\"," .
+            "\"hit\":\"$hitFact\"," .
+            "\"attempt_time\":\"$attempt_time\"," .
+            "\"process_time\":\"$process_time\"" .
+            "}";
 
         if (!isset($_SESSION['attempts'])) {
-            $_SESSION['attempts'] = array($attempt);
+            $_SESSION['attempts'] = array($data);
         } else {
-            array_push($_SESSION['attempts'], $attempt);
+            array_push($_SESSION['attempts'], $data);
         }
+        echo($data);
 
-        // Redirect back to home page
-        header('Location: /');
+        // // Redirect back to home page
+        // header('Location: /');
     }
 ?>
